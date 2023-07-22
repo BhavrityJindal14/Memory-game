@@ -1,0 +1,78 @@
+*{
+    padding:0;
+    margin:0;
+    box-sizing:border-box;
+}
+
+body{
+    height:100vh;
+    background-color:blueviolet;
+    display:flex;
+}
+
+.para {
+    font-size: 30px;
+    font-style:italic;
+    text-align: center;
+    padding: 20px 20px;
+}
+
+u{
+    text-decoration:underline;
+    text-decoration-style: double;
+
+}
+
+.img{
+    height:500px;
+    width:500px; 
+
+}
+
+.game{
+    width:640px;
+    height:640px;
+    margin-top: 100px;
+    margin:auto;
+    display:flex;
+    flex-wrap:wrap;
+    border:2px solid beige; 
+    perspective:1000px;
+
+}
+
+.memory-card{
+    width:25%;
+    height:33.3%;
+    position:relative;
+    border:2px solid palevioletred;
+    transform:scale(1);
+    transform-style:preserve-3d;
+    transition:transform .5s;
+
+}
+
+.memory-card:active{
+    transform:scale(.97);    /* to make the cards clickable we use the active class*/
+    transition:transform .2s;
+}
+
+.memory-card.flip{
+    transform:rotateY(180deg);
+}
+
+.front-face,
+.back-face{
+    width:100%;
+    height:100%;
+    padding:20px;
+    position:absolute;
+    border:2px solid palegreen;
+    background:rgb(234, 133, 217);
+    backface-visibility:hidden;
+
+}
+
+.front-face{
+    transform:rotateY(180deg);
+}
